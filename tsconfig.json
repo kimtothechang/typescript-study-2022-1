@@ -1,0 +1,16 @@
+{
+  // 컴파일 옵션
+  "compileOptions": {
+    "module": "commonjs",
+    // node.js를 평범하게 사용, 다양한 것을 import,export 가능하게만듬
+    "target": "ES2015",
+    // 어떤 버전의 JavaScript로 컴파일 되고 싶은지
+    "sourceMap": true,
+    // sourcemap 처리를 하고싶은지
+    "strict": true
+  },
+  // 어떤 파일들이 컴파일 과정에 포함되는지 TypeScript에게 알려준다.
+  "include": ["index.ts"],
+  "exclude": ["node_modules"]
+  // 사용하지 않을 때라도 디폴트로 제외해놓자
+}

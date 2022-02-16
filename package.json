@@ -1,0 +1,12 @@
+{
+  "name": "typescript-study-2022-1",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/kimtothechang/typescript-study-2022-1.git",
+  "author": "chango <kimtothechang@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js",
+    "prestart": "tsc"
+  }
+}
