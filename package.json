@@ -6,7 +6,12 @@
   "author": "chango <kimtothechang@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "node index.js",
-    "prestart": "tsc"
+    "start": "tsc-watch --onSuccess \" node dist/index.js\" "
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.18",
+    "ts-node": "^10.5.0",
+    "tsc-watch": "^4.6.0",
+    "typescript": "^4.5.5"
   }
 }
