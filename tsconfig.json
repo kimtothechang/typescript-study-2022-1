@@ -7,6 +7,7 @@
     // 어떤 버전의 JavaScript로 컴파일 되고 싶은지
     "sourceMap": true,
     // sourcemap 처리를 하고싶은지
+    "strict": true,
     "outDir": "dist"
   },
   // 어떤 파일들이 컴파일 과정에 포함되는지 TypeScript에게 알려준다.
