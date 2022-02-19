@@ -1,19 +1,20 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-// JS에서도 interface를 활용하려면 class를 통해서 가능하다.
-class Human {
-    constructor(name, age, gender) {
-        this.name = name;
-        this.age = age;
-        this.gender = gender;
+// import * as CryptoJS from "crypto-js";
+const CryptoJS = require("crypto-js");
+class Block {
+    constructor(index, hash, previousHash, data, timestamp) {
+        this.index = index;
+        this.hash = hash;
+        this.previousHash = previousHash;
+        this.data = data;
+        this.timestamp = timestamp;
     }
 }
-const chango = new Human("chango", 27, "male");
-// parameter뒤에 ?가 올경우 선택적인 것이다.
-// parameter뒤어 :타입을 통해 타입을 지정해 줄 수 있다.
-const sayHi = (person) => {
-    return `Hello ${person.name} u r ${person.age} and ${person.gender}`;
-};
-// argument가 지정된 갯수와 같아야 컴파일 시켜준다.
-console.log(sayHi(chango));
+Block.calculateBlockHash = (index, previousHash, timestamp, data) => CryptoJS.SHA256(index + previousHash + timestamp + data).toString();
+const genesisBlock = new Block(0, "20220219", "", "Hello", 123456);
+let blockchain = [genesisBlock];
+const getBlockchain = () => blockchain;
+const getLatestBlock = () => blockchain[blockchain.length - 1];
+const getNewTimeStamp = () => Math.round(new Date().getTime() / 1000);
 //# sourceMappingURL=index.js.map
